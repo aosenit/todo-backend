@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import cors from "cors";
 import AuthRouter from "./routes/auth.js";
 import authenticateToken from "./util/authenticate.js";
 import TodosRouter from "./routes/todos.js";
@@ -10,6 +11,7 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 const port = process.env.PORT;
 
